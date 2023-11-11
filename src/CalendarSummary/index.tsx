@@ -73,8 +73,8 @@ const CalendarSummary: React.FunctionComponent = () => {
 					</tr>
 				</thead>
 				<tbody>
-					{dailySummaries.map(({ date, eventCount, totalDuration, longestEventTitle }) => (
-						<tr key={date.toISOString()}>
+					{dailySummaries.map(({ date, eventCount, totalDuration, longestEventTitle }, i) => (
+						<tr key={date.toISOString()} style={{ backgroundColor: i % 2 === 0 ? '#f2f2f2' : '#fff' }}>
 							<td>{date.toISOString().split('T')[0]}</td>
 							<td>{eventCount}</td>
 							<td>{totalDuration}</td>
